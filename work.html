@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>مذكرة العمل 💼</title>
+  <title>💼 مذكرة العمل</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,17 +43,18 @@
   <br>
   <button onclick="saveNote()">💾 حفظ</button>
   <br>
-  <a href="index.html">⬅️ الرجوع إلى القائمة</a>
+  <a href="index.html">⬅️ الرجوع إلى القائمة الرئيسية</a>
 
   <script>
-    // استخدام مفتاح خاص للعمل
-    const key = 'workNote';
-    document.getElementById('note').value = localStorage.getItem(key) || '';
+    const storageKey = 'note_work'; // مفتاح خاص بهذه الصفحة فقط
+
+    // تحميل الملاحظات
+    document.getElementById('note').value = localStorage.getItem(storageKey) || '';
 
     function saveNote() {
       const content = document.getElementById('note').value;
-      localStorage.setItem(key, content);
-      alert("تم حفظ مذكرة العمل ✅");
+      localStorage.setItem(storageKey, content);
+      alert("✅ تم حفظ مذكرة العمل!");
     }
   </script>
 
